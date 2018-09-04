@@ -1,0 +1,15 @@
+The start symbol is block.
+
+Two non-terminals, integer and var, are specified informally by:
+  – integer: An optional minus sign, followed by one or more decimal digits.
+  – var: A letter, followed by zero or more letters or digits. However, reserved words are not allowed to be
+         vars. The reserved words are:
+         if, then, else, let, in, True, False.
+  If the parser sees a reserved word when a var is expected, it is considered a parser error.
+
+There can be spaces, tabs, and newlines (collectively known as whitespaces) around integers, vars, and terminal strings. For example
+      let { x           
+          = 4 * (         
+     5+6) ;
+  } in \ y ->    if x < y then x else y
+is allowed.
